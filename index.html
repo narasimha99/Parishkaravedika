@@ -1,0 +1,493 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-1902 - Parishkaravedika</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="/portal/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-brand" href="/portal/">CRM Dispositions</a>
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+                                    </ul>
+
+                
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="/portal/Account/Login" id="loginLink">Log in</a></li>
+        </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        
+
+
+<body>
+
+    <form action="/portal/add" method="post" name="form1">
+        
+    <div class="row" style="margin-top: 15px;">
+        
+             
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label class=><b>Agent ID</b></label>
+                   
+            </div>
+           
+
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+              <input class="form-control text-box single-line" id="AgentId" name="AgentId" required="required" type="text" value="" />
+        </div>
+    
+        
+            
+        <div class="col-md-2 col-sm-2 col-xs-12">
+                <label>Campaign</label>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+                <input id="CampaignName" name="CampaignName" type="hidden" value="" />
+            
+            <select class="form-control" data-val="true" data-val-number="The field CampaignId must be a number." data-val-required="The CampaignId field is required." id="CampaignId" name="CampaignId" ><option value="">Select Campaign</option>
+        <option value="1">Navaratnalu - 1902</option>
+        <option value="2">Spandana - 1100</option>
+        <option value="4">Agriculture - 1907</option>
+        <option value="5">ACB - 14400</option>
+        <option value="6">Sand - 14500</option>
+        </select> 
+    </div>
+
+     </div>
+     
+             
+<div class="row"  style="margin-top: 15px;" >
+
+    <div class="col-md-2 col-sm-2 col-xs-12">						
+        <label>Mobile No</label>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+            
+                 <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" required pattern="[6-9]{1}[0-9]{9}"
+                       title="Phone number with 6-9 and remaing 9 digit with 0-9">
+      </div>
+
+
+
+        <div class="col-md-2 col-sm-2 col-xs-12">						
+            <label>Call No</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+                 <input class="form-control text-box single-line" id="CallNumber" name="CallNumber" type="text" value="" />
+         </div>
+</div>
+
+<div class="row" style="margin-top: 15px;">
+    
+        <div class="col-md-2 col-sm-2 col-xs-12">						
+                <label>Disposition</label>
+            </div>
+        
+        
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    
+                     
+                 <select name="Disposition" id="Disposition" class="form-control">
+                    <option value="Answered" selected>Answered</option>
+                    <option value="Callback">Callback</option>
+                    <option value="Calldrop">Calldrop</option>
+                    <option value="For different campaign">For different campaign</option>
+                    <option value="New grievance registered">New grievance registered</option>
+                    <option value="No voice post answer the call">No voice post answer the call</option>
+                </select>
+         </div>		
+</div>
+ 
+ 
+
+        <div class="row"  style="margin-top: 15px;" >
+                <div class="col-md-2 col-sm-2 col-xs-12">						
+                        <label>District</label>
+                </div>					
+            <div class="col-md-4 col-sm-4 col-xs-12">
+            
+                    <input id="DistrictName" name="DistrictName" type="hidden" value="" />
+                <select class="form-control" data-val="true" data-val-number="The field DistrictId must be a number." data-val-required="The DistrictId field is required." id="DistrictId" name="DistrictId" onchange="Districts()"><option value="">Select District</option>
+<option value="11">Srikakulam</option>
+<option value="12">Vizianagaram</option>
+<option value="13">Visakhapatnam</option>
+<option value="14">EastGodavari</option>
+<option value="15">WestGodavari</option>
+<option value="16">Krishna</option>
+<option value="17">Guntur</option>
+<option value="18">Prakasam</option>
+<option value="19">SriPottiSriramuluNellore</option>
+<option value="20">YSRCuddapah</option>
+<option value="21">Kurnool</option>
+<option value="22">Anantapur</option>
+<option value="23">Chittoor</option>
+</select>
+            </div>
+         
+            <div class="col-md-2 col-sm-2 col-xs-12">						
+                    <label>Mandal</label>
+            </div>					
+        <div class="col-md-4 col-sm-4 col-xs-12">
+             
+            <input id="TehsilName" name="TehsilName" type="hidden" value="" />
+                 <select class="form-control" data-val="true" data-val-number="The field TehsilId must be a number." data-val-required="The TehsilId field is required." id="TehsilId" name="TehsilId" onchange="Villages()"><option value="">Select Mandal</option>
+</select>
+            </div>
+         
+ 
+</div>
+
+<div class="row"  style="margin-top: 15px;">
+        <div class="col-md-2 col-sm-2 col-xs-12">						
+           <label>Village</label>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+             
+        <input id="VillageName" name="VillageName" type="hidden" value="" />
+             <div >
+                <select class="form-control" data-val="true" data-val-number="The field VillageId must be a number." data-val-required="The VillageId field is required." id="VillageId" name="VillageId"><option value="">Select Village</option>
+</select>
+            </div>
+        </div>
+</div>	
+
+    <div class="row"  style="margin-top: 15px;">
+            <div class="col-md-2 col-sm-2 col-xs-12">						
+                    <label>Department</label>
+            </div>				
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                    
+        <input id="DepartmentName" name="DepartmentName" type="hidden" value="" />
+                 <select class="form-control" data-val="true" data-val-number="The field DepartmentId must be a number." data-val-required="The DepartmentId field is required." id="DepartmentId" name="DepartmentId" onchange="Departments()" ><option value="">Select Department</option>
+<option value="1">AGRICULTURE AND CO OPERATION</option>
+<option value="2">ANIMAL HUSBANDRY</option>
+<option value="3">BACKWARD CLASSES WELFARE</option>
+<option value="4">CIVIL SUPPLIES</option>
+<option value="5">EDUCATION</option>
+<option value="6">ENERGY</option>
+<option value="7">ENVIRONMENT FOREST SCIENCE AND TECHNOLOGY</option>
+<option value="8">FINANCE</option>
+<option value="9">FISHERIES</option>
+<option value="10">HEALTH MEDICAL FAMILY WELFARE</option>
+<option value="11">HOME</option>
+<option value="12">HOUSING</option>
+<option value="13">INDUSTRIES AND COMMERCE ?</option>
+<option value="14">KAPU CORPORATION</option>
+<option value="15">LABOUR EMPLOYMENT TRAINING AND FACTORIES</option>
+<option value="16">REVENUE</option>
+<option value="17">MINING  DEPARTMENT</option>
+<option value="18">MINORITY WELFARE</option>
+<option value="19">MUNICIPAL ADMINISTRATION</option>
+<option value="20">PANCHAYAT RAJ AND RURAL DEVELOPMENT</option>
+<option value="21">SCHEDULED CASTE WELFARE</option>
+<option value="22">SERP</option>
+<option value="23">SKILLS DEVELOPMENT ENTREPRENEURSHIP AND INNOVATION ?</option>
+<option value="24">TRANSPORT ROADS AND BUILDINGS</option>
+<option value="25">TRIBAL WELFARE</option>
+<option value="27">WOMEN AND CHILD DEVELOPMENT </option>
+<option value="28">YOUTH ADVANCEMENT TOURISM AND CULTURE</option>
+<option value="29">GENERAL</option>
+<option value="30">ELECTION COMISSION</option>
+<option value="31">AWARE</option>
+<option value="32">HORTICULTURE</option>
+<option value="33">MINES AND GEOLOGY</option>
+<option value="34">LAND ADMINISTRATION</option>
+<option value="35">Navarathnalu</option>
+<option value="36">UIDAI</option>
+<option value="37">POLICE</option>
+<option value="38">INDUSTRIES AND COMMERCE</option>
+<option value="39">PROHIBITION AND EXCISE</option>
+<option value="40">MINING DEPARTMENT</option>
+<option value="41">Anti-Corruption Bureau</option>
+<option value="42">LABOUR EMPLOYMENT TARINING AND FACTORIES</option>
+<option value="43">CALLS OTHER THAN SAND AND EXCISE</option>
+<option value="44">PROHIBITION &amp; EXCISE</option>
+<option value="45">CALL OTHER THAN SAND AND EXCISE</option>
+<option value="46">LAW</option>
+<option value="47">Health Medical and family welfare</option>
+<option value="48">PANCHAYATRAJ AND RURAL DEVELOPMENT</option>
+<option value="49">GRAMA SECRETARIAT VALIDATION</option>
+<option value="50">MPDO</option>
+<option value="51">INFORMATION TECHNOLOGY</option>
+<option value="52">PANCHAYAT RAJ AND RURAL DEVELOPMENT - 1902</option>
+<option value="53">MUNICIPAL ADMINISTRATION - 1902</option>
+<option value="54">Voice</option>
+<option value="55">Test</option>
+<option value="56">BRAHMIN WELFARE CORPORATION</option>
+<option value="57">14500</option>
+<option value="58">CORONA</option>
+</select>
+            </div>
+    
+            <div class="col-md-2 col-sm-2 col-xs-12">						
+                    <label>HOD</label>
+            </div>				
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+             
+        <input id="HodName" name="HodName" type="hidden" value="" />
+                 <select class="form-control" data-val="true" data-val-number="The field HodId must be a number." data-val-required="The HodId field is required." id="HodId" name="HodId" onchange="Hods()" required="required" ><option value="">Select HOD</option>
+</select>
+            </div>
+        </div>
+     
+
+        <div class="row"  style="margin-top: 15px;">
+
+            <div class="col-md-2 col-sm-2 col-xs-12">						
+                    <label>Subject</label>
+            </div>				
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+             <input id="SubjectName" name="SubjectName" type="hidden" value="" />
+                 <select class="form-control" data-val="true" data-val-number="The field SubjectId must be a number." data-val-required="The SubjectId field is required." id="SubjectId" name="SubjectId" onchange="Subjects()" required="required" ><option value="">Select Subject</option>
+                </select>
+            </div>
+    
+            <div class="col-md-2 col-sm-2 col-xs-12">						
+                    <label>SubSubject</label>
+            </div>				
+
+        <div class="col-md-4 col-sm-4 col-xs-12">	
+         <input id="SubSubjectName" name="SubSubjectName" type="hidden" value="" />
+                 <select class="form-control" data-val="true" data-val-number="The field SubSubjectId must be a number." data-val-required="The SubSubjectId field is required." id="SubSubjectId" name="SubSubjectId" required="required" ><option value="">Select SubSubject</option>
+</select>
+            </div>
+        </div>
+ 
+
+        <div class="form-group">
+            <label>Remarks</label>
+            <div >
+                <input class="form-control text-box single-line" id="Remarks" name="Remarks" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Remarks" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group" style="text-align:right">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" id="submit" value="SUBMIT" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <link href="/portal/Styles/sweetalert.css" rel="stylesheet" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" />
+ -->
+    
+    <script>	
+
+        function Districts() {
+            var Id = $('#DistrictId').val();
+            $.ajax({
+                url: 'http://localhost:7071/api/CallMandalMaster?districtId='+Id,
+                type: "GET",
+                dataType: "JSON",
+                data: { },
+                success: function (tehsils) {
+                    $("#TehsilId").html("");
+
+                    $("#TehsilId").append(
+                        $('<option></option>').val("").html("Select Mandal"));
+
+                    $.each(tehsils, function (i, tehsil) {
+                        $("#TehsilId").append(
+                            $('<option></option>').val(tehsil.TehsilId).html(tehsil.TehsilName));
+
+                    });
+                }
+            });
+        }
+
+        // //function Constituencies() {
+        // //    var Id = $('#ConstituencyId').val();
+        // //    $.ajax({
+        // //        url: '/portal/CallMaster/Masters',
+        // //        type: "GET",
+        // //        dataType: "JSON",
+        // //        data: { constituencyId: Id },
+        // //        success: function (tehsils) {
+        // //            $("#TehsilId").html("");
+
+        // //            $("#TehsilId").append(
+        // //                $('<option></option>').val("").html("Select Tehsil"));
+
+        // //            $.each(tehsils, function (i, tehsil) {
+        // //                $("#TehsilId").append(
+        // //                    $('<option></option>').val(tehsil.Id).html(tehsil.Name));
+        // //            });
+        // //        }
+        // //    });
+        // //}
+
+        function Villages() {
+            var tehsilId = $('#TehsilId').val();
+            $.ajax({
+                url: 'http://localhost:7071/api/CallVillageMaster?mandalId='+tehsilId,
+                type: "GET",
+                dataType: "JSON",
+                data: {  },
+                success: function (villages) {
+                    $("#VillageId").html("");
+
+                    $("#VillageId").append(
+                        $('<option></option>').val("").html("Select Village"));
+
+                    $.each(villages, function (i, village) {
+                        $("#VillageId").append(
+                            $('<option></option>').val(village.VillageId).html(village.VillageName));
+                    });
+                }
+            });
+        }
+
+
+
+
+
+        function Departments() {
+            var departmentId = $('#DepartmentId').val();
+            $.ajax({
+                url: 'http://localhost:7071/api/CallHODMaster?departmentId='+departmentId,
+                type: "GET",
+                dataType: "JSON",
+                data: { },
+                success: function (hods) {
+                    $("#HodId").html("");
+
+                    $("#HodId").append(
+                        $('<option></option>').val("").html("Select HOD"));
+
+                    $.each(hods, function (i, hod) {
+                        $("#HodId").append(
+                            $('<option></option>').val(hod.Id).html(hod.Name));
+
+                    });
+                }
+            });
+        }
+
+        function Hods() {
+            var hodId = $('#HodId').val();
+            $.ajax({
+                url: 'http://localhost:7071/api/CallSubjectMaster?hodId='+hodId,
+                type: "GET",
+                dataType: "JSON",
+                data: { },
+                success: function (subjects) {
+                    $("#SubjectId").html("");
+
+                    $("#SubjectId").append(
+                        $('<option></option>').val("").html("Select Subject"));
+
+                    $.each(subjects, function (i, subject) {
+                        $("#SubjectId").append(
+                            $('<option></option>').val(subject.Id).html(subject.Name));
+                    });
+                }
+            });
+        }
+
+        function Subjects() {
+            var subjectId = $('#SubjectId').val();
+            $.ajax({
+                url: 'http://localhost:7071/api/CallSubSubjecMaster?subjectId='+subjectId,
+                type: "GET",
+                dataType: "JSON",
+                data: { },
+                success: function (subsubjects) {
+                    $("#SubSubjectId").html("");
+
+                    $("#SubSubjectId").append(
+                        $('<option></option>').val("").html("Select SubSubject"));
+
+                    $.each(subsubjects, function (i, subsubject) {
+                        $("#SubSubjectId").append(
+                            $('<option></option>').val(subsubject.Id).html(subsubject.Name));
+                    });
+                }
+            });
+        }
+
+
+
+
+        $(function () {
+            $("form").submit(function () {
+                var campaign = $("#CampaignId option:selected").text();
+                $("#CampaignName").val(campaign);
+
+
+                var district = $("#DistrictId option:selected").text();
+                $("#DistrictName").val(district);
+
+                var tehsil = $("#TehsilId option:selected").text();
+                $("#TehsilName").val(tehsil);
+
+                var village = $("#VillageId option:selected").text();
+                $("#VillageName").val(village);
+
+
+
+                var department = $("#DepartmentId option:selected").text();
+                $("#DepartmentName").val(department);
+
+                var hod = $("#HodId option:selected").text();
+                $("#HodName").val(hod);
+
+                var subject = $("#SubjectId option:selected").text();
+                $("#SubjectName").val(subject);
+
+
+                var subsubject = $("#SubSubjectId option:selected").text();
+                $("#SubSubjectName").val(subsubject);
+
+            });
+        });
+
+
+
+    </script>
+
+</body>
+</html>
+
+        <hr />
+        <footer>
+            <p>&copy; 2020 - CRM</p>
+        </footer>
+    </div>
+
+ 
+</form>
