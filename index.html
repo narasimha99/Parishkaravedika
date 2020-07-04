@@ -311,7 +311,7 @@
         function Districts() {
             var Id = $('#DistrictId').val();
             $.ajax({
-                url: 'http://localhost:7071/api/CallMandalMaster?districtId='+Id,
+                url: 'http://parishkaravedika.azurewebsites.net/api/CallMandalMaster?districtId='+Id,
                 type: "GET",
                 dataType: "JSON",
                 data: { },
@@ -354,7 +354,7 @@
         function Villages() {
             var tehsilId = $('#TehsilId').val();
             $.ajax({
-                url: 'http://localhost:7071/api/CallVillageMaster?mandalId='+tehsilId,
+                url: 'http://parishkaravedika.azurewebsites.net/api/CallVillageMaster?mandalId='+tehsilId,
                 type: "GET",
                 dataType: "JSON",
                 data: {  },
@@ -379,7 +379,7 @@
         function Departments() {
             var departmentId = $('#DepartmentId').val();
             $.ajax({
-                url: 'http://localhost:7071/api/CallHODMaster?departmentId='+departmentId,
+                url: 'http://parishkaravedika.azurewebsites.net/api/CallHODMaster?departmentId='+departmentId,
                 type: "GET",
                 dataType: "JSON",
                 data: { },
@@ -401,7 +401,7 @@
         function Hods() {
             var hodId = $('#HodId').val();
             $.ajax({
-                url: 'http://localhost:7071/api/CallSubjectMaster?hodId='+hodId,
+                url: 'http://parishkaravedika.azurewebsites.net/api/CallSubjectMaster?hodId='+hodId,
                 type: "GET",
                 dataType: "JSON",
                 data: { },
@@ -422,7 +422,7 @@
         function Subjects() {
             var subjectId = $('#SubjectId').val();
             $.ajax({
-                url: 'http://localhost:7071/api/CallSubSubjecMaster?subjectId='+subjectId,
+                url: 'http://parishkaravedika.azurewebsites.net/api/CallSubSubjecMaster?subjectId='+subjectId,
                 type: "GET",
                 dataType: "JSON",
                 data: { },
