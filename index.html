@@ -315,7 +315,7 @@
             function Districts() {
                 var Id = $('#DistrictId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallMandalMaster?districtId='+Id,
+                    url: 'http://localhost:7071/api/CallMandalMaster?districtId='+Id,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -358,7 +358,7 @@
             function Villages() {
                 var tehsilId = $('#TehsilId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallVillageMaster?mandalId='+tehsilId,
+                    url: 'http://localhost:7071/api/CallVillageMaster?mandalId='+tehsilId,
                     type: "GET",
                     dataType: "JSON",
                     data: {  },
@@ -383,7 +383,7 @@
             function Departments() {
                 var departmentId = $('#DepartmentId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallHODMaster?departmentId='+departmentId,
+                    url: 'http://localhost:7071/api/CallHODMaster?departmentId='+departmentId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -405,7 +405,7 @@
             function Hods() {
                 var hodId = $('#HodId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubjectMaster?hodId='+hodId,
+                    url: 'http://localhost:7071/api/CallSubjectMaster?hodId='+hodId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -426,7 +426,7 @@
             function Subjects() {
                 var subjectId = $('#SubjectId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubSubjecMaster?subjectId='+subjectId,
+                    url: 'http://localhost:7071/api/CallSubSubjecMaster?subjectId='+subjectId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -471,7 +471,7 @@
             function checkForStaffMemebership(dataObj) {
             return new Promise(function (resolve, reject) {
             $.ajax({
-                url: 'https://parishkaravedika.azurewebsites.net/api/addDisposition',
+                url: 'http://localhost:7071/api/addDisposition',
                 type: "post",
                 dataType: 'json',
                 async: false,
@@ -481,12 +481,12 @@
                 data:JSON.stringify(dataObj),
                 success: function (data) {
                     alert('Data Saved Successfully');
-                   // window.location.href = 'https://parishkaravedika.azurewebsites.net';
+                    window.location.href = 'http://localhost:8000/index.html';
        
                 },
                 error: function(data){
-                    alert('Data Saved Successfully');
-                  //  window.location.href = 'https://parishkaravedika.azurewebsites.net';
+                    alert('Data Saved Successfully!');
+                    window.location.href = 'http://localhost:8000/index.html';
     
                 }
             });
@@ -496,16 +496,18 @@
     
     
             $(function () {
-     
-                $("#submit").click(function () {
-                        
-                    // var $myForm = $('#form1');
+                $("#form1").on('submit',function(e){
+                        e.preventDefault();
+                     // alert("Form submitted");
+                     //var $myForm = $('#form1');
                     //  //   alert( $myForm[0].checkValidity());
                     // if(! $myForm[0].checkValidity()) {
                     // // If the form is invalid, submit it. The form won't actually submit;
                     // // this will just cause the browser to display the native HTML5 error messages.
-                    //     $myForm.find(':submit').click();
+                    //     //$myForm.find(':submit').click();
+                    //     //alert('inside data');
                     // }
+                    // alert('after inside data');
 
                     var campaign = $("#CampaignId option:selected").text();
                     $("#CampaignName").val(campaign);
