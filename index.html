@@ -471,7 +471,7 @@
             function checkForStaffMemebership(dataObj) {
             return new Promise(function (resolve, reject) {
             $.ajax({
-                url: 'http://localhost:7071/api/addDisposition',
+                url: 'https://parishkaravedika.azurewebsites.net/api/addDisposition',
                 type: "post",
                 dataType: 'json',
                 async: false,
@@ -481,12 +481,12 @@
                 data:JSON.stringify(dataObj),
                 success: function (data) {
                     alert('Data Saved Successfully');
-                    //window.location.href = 'http://localhost:8000/index.html';
+                    window.location.href = 'https://parishkaravedika.azurewebsites.net';
        
                 },
                 error: function(data){
                     alert('Data Saved Successfully');
-                   // window.location.href = 'http://localhost:8000/index.html';
+                    window.location.href = 'https://parishkaravedika.azurewebsites.net';
     
                 }
             });
