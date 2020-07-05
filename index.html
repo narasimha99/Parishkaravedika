@@ -315,7 +315,7 @@
             function Districts() {
                 var Id = $('#DistrictId').val();
                 $.ajax({
-                    url: 'http://localhost:7071/api/CallMandalMaster?districtId='+Id,
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallMandalMaster?districtId='+Id,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -358,7 +358,7 @@
             function Villages() {
                 var tehsilId = $('#TehsilId').val();
                 $.ajax({
-                    url: 'http://localhost:7071/api/CallVillageMaster?mandalId='+tehsilId,
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallVillageMaster?mandalId='+tehsilId,
                     type: "GET",
                     dataType: "JSON",
                     data: {  },
@@ -383,7 +383,7 @@
             function Departments() {
                 var departmentId = $('#DepartmentId').val();
                 $.ajax({
-                    url: 'http://localhost:7071/api/CallHODMaster?departmentId='+departmentId,
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallHODMaster?departmentId='+departmentId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -405,7 +405,7 @@
             function Hods() {
                 var hodId = $('#HodId').val();
                 $.ajax({
-                    url: 'http://localhost:7071/api/CallSubjectMaster?hodId='+hodId,
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubjectMaster?hodId='+hodId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -426,7 +426,7 @@
             function Subjects() {
                 var subjectId = $('#SubjectId').val();
                 $.ajax({
-                    url: 'http://localhost:7071/api/CallSubSubjecMaster?subjectId='+subjectId,
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubSubjecMaster?subjectId='+subjectId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -471,7 +471,7 @@
             function checkForStaffMemebership(dataObj) {
             return new Promise(function (resolve, reject) {
             $.ajax({
-                url: 'http://localhost:7071/api/addDisposition',
+                url: 'https://parishkaravedika.azurewebsites.net/api/addDisposition',
                 type: "post",
                 dataType: 'json',
                 async: false,
@@ -481,13 +481,11 @@
                 data:JSON.stringify(dataObj),
                 success: function (data) {
                     alert('Data Saved Successfully');
-                    window.location.href = 'http://localhost:8000/index.html';
-       
+                    location.reload(true);
                 },
                 error: function(data){
                     alert('Data Saved Successfully!');
-                    window.location.href = 'http://localhost:8000/index.html';
-    
+                     location.reload(true);
                 }
             });
         });
