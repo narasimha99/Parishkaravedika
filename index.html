@@ -134,20 +134,7 @@
                 
                         <input id="DistrictName" name="DistrictName" type="hidden" value="" />
                     <select class="form-control" data-val="true" data-val-number="The field DistrictId must be a number." data-val-required="The DistrictId field is required." id="DistrictId" name="DistrictId" onchange="Districts()"><option value="">Select District</option>
-    <option value="11">Srikakulam</option>
-    <option value="12">Vizianagaram</option>
-    <option value="13">Visakhapatnam</option>
-    <option value="14">EastGodavari</option>
-    <option value="15">WestGodavari</option>
-    <option value="16">Krishna</option>
-    <option value="17">Guntur</option>
-    <option value="18">Prakasam</option>
-    <option value="19">SriPottiSriramuluNellore</option>
-    <option value="20">YSRCuddapah</option>
-    <option value="21">Kurnool</option>
-    <option value="22">Anantapur</option>
-    <option value="23">Chittoor</option>
-    </select>
+					</select>
                 </div>
              
                 <div class="col-md-2 col-sm-2 col-xs-12">						
@@ -186,65 +173,9 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                         
             <input id="DepartmentName" name="DepartmentName" type="hidden" value="" />
-                     <select class="form-control" data-val="true" data-val-number="The field DepartmentId must be a number." data-val-required="The DepartmentId field is required." id="DepartmentId" name="DepartmentId" onchange="Departments()" ><option value="">Select Department</option>
-    <option value="1">AGRICULTURE AND CO OPERATION</option>
-    <option value="2">ANIMAL HUSBANDRY</option>
-    <option value="3">BACKWARD CLASSES WELFARE</option>
-    <option value="4">CIVIL SUPPLIES</option>
-    <option value="5">EDUCATION</option>
-    <option value="6">ENERGY</option>
-    <option value="7">ENVIRONMENT FOREST SCIENCE AND TECHNOLOGY</option>
-    <option value="8">FINANCE</option>
-    <option value="9">FISHERIES</option>
-    <option value="10">HEALTH MEDICAL FAMILY WELFARE</option>
-    <option value="11">HOME</option>
-    <option value="12">HOUSING</option>
-    <option value="13">INDUSTRIES AND COMMERCE ?</option>
-    <option value="14">KAPU CORPORATION</option>
-    <option value="15">LABOUR EMPLOYMENT TRAINING AND FACTORIES</option>
-    <option value="16">REVENUE</option>
-    <option value="17">MINING  DEPARTMENT</option>
-    <option value="18">MINORITY WELFARE</option>
-    <option value="19">MUNICIPAL ADMINISTRATION</option>
-    <option value="20">PANCHAYAT RAJ AND RURAL DEVELOPMENT</option>
-    <option value="21">SCHEDULED CASTE WELFARE</option>
-    <option value="22">SERP</option>
-    <option value="23">SKILLS DEVELOPMENT ENTREPRENEURSHIP AND INNOVATION ?</option>
-    <option value="24">TRANSPORT ROADS AND BUILDINGS</option>
-    <option value="25">TRIBAL WELFARE</option>
-    <option value="27">WOMEN AND CHILD DEVELOPMENT </option>
-    <option value="28">YOUTH ADVANCEMENT TOURISM AND CULTURE</option>
-    <option value="29">GENERAL</option>
-    <option value="30">ELECTION COMISSION</option>
-    <option value="31">AWARE</option>
-    <option value="32">HORTICULTURE</option>
-    <option value="33">MINES AND GEOLOGY</option>
-    <option value="34">LAND ADMINISTRATION</option>
-    <option value="35">Navarathnalu</option>
-    <option value="36">UIDAI</option>
-    <option value="37">POLICE</option>
-    <option value="38">INDUSTRIES AND COMMERCE</option>
-    <option value="39">PROHIBITION AND EXCISE</option>
-    <option value="40">MINING DEPARTMENT</option>
-    <option value="41">Anti-Corruption Bureau</option>
-    <option value="42">LABOUR EMPLOYMENT TARINING AND FACTORIES</option>
-    <option value="43">CALLS OTHER THAN SAND AND EXCISE</option>
-    <option value="44">PROHIBITION &amp; EXCISE</option>
-    <option value="45">CALL OTHER THAN SAND AND EXCISE</option>
-    <option value="46">LAW</option>
-    <option value="47">Health Medical and family welfare</option>
-    <option value="48">PANCHAYATRAJ AND RURAL DEVELOPMENT</option>
-    <option value="49">GRAMA SECRETARIAT VALIDATION</option>
-    <option value="50">MPDO</option>
-    <option value="51">INFORMATION TECHNOLOGY</option>
-    <option value="52">PANCHAYAT RAJ AND RURAL DEVELOPMENT - 1902</option>
-    <option value="53">MUNICIPAL ADMINISTRATION - 1902</option>
-    <option value="54">Voice</option>
-    <option value="55">Test</option>
-    <option value="56">BRAHMIN WELFARE CORPORATION</option>
-    <option value="57">14500</option>
-    <option value="58">CORONA</option>
-    </select>
+                     <select class="form-control" data-val="true" data-val-number="The field DepartmentId must be a number." data-val-required="The DepartmentId field is required." id="DepartmentId" name="DepartmentId" onchange="Departments()" >
+					 <option value="">Select Department</option>
+     </select>
                 </div>
         
                 <div class="col-md-2 col-sm-2 col-xs-12">						
@@ -445,6 +376,50 @@
             }
     
     
+	       function getDepartmentMaster() {
+                
+                $.ajax({
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallDepartmentMaster',
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { },
+                    success: function (departments) {
+                        $("#DepartmentId").html("");
+    
+                        $("#DepartmentId").append(
+                            $('<option></option>').val("").html("Select Department"));
+    
+                        $.each(departments, function (i, department) {
+                            $("#DepartmentId").append(
+                                $('<option></option>').val(department.Id).html(department.Name));
+                        });
+                    }
+                });
+            }
+			
+    
+			function getDistrictMaster() {
+                
+                $.ajax({
+                    url: 'https://parishkaravedika.azurewebsites.net/api/CallDistrictMaster',
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { },
+                    success: function (districts) {
+                        $("#DistrictId").html("");
+    
+                        $("#DistrictId").append(
+                            $('<option></option>').val("").html("Select District"));
+    
+                        $.each(districts, function (i, district) {
+                            $("#DistrictId").append(
+                                $('<option></option>').val(district.districtid).html(district.districtname));
+                        });
+                    }
+                });
+            }
+			
+	
             function StoreDisposition() {
             
                 var dataObj = {
@@ -482,10 +457,13 @@
                 success: function (data) {
                     alert('Data Saved Successfully');
                     location.reload(true);
+       
                 },
                 error: function(data){
                     alert('Data Saved Successfully!');
-                     location.reload(true);
+                    location.reload(true);
+                    
+    
                 }
             });
         });
@@ -494,7 +472,10 @@
     
     
             $(function () {
-                $("#form1").on('submit',function(e){
+				getDepartmentMaster();
+				getDistrictMaster();
+	 
+					$("#form1").on('submit',function(e){
                         e.preventDefault();
                      // alert("Form submitted");
                      //var $myForm = $('#form1');
