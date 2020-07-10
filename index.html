@@ -7,68 +7,128 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     </head>
-    <body>
-    
-        <br/>
-        
-        <div class="container">
-          
-        <div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <a class="navbar-brand" href="/">CRM Dispositions</a>
-                </div>
-                <div class="navbar-collapse collapse">
-    
-                    <ul class="nav navbar-nav">
-                                        </ul>
-    
-                    
-    
-            <ul class="nav navbar-nav navbar-right">
-    
-                <li><a href="#" id="loginLink">Log in</a></li>
-            </ul>
-    
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
+     
+        <style>
+
+            .wrapper {
+                text-align: center;
+            }
             
-         <br/>
-         <br/> 
-         <br/>
-        <form  method="post" name="form1" id="form1">
+            .button {
+                position: absolute;
+                top: 45%;
+            background-color:#5068c2;
+            }
+            
+            .topnav {
+              overflow: hidden;
+             background-color:#5068c2;
+            
+            
+            }
+            
+            .topnav a {
+              float: left;
+              display: block;
+              color: #eee;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 14px;
+            }
+            
+            .topnav a:hover {
+              background-color:  #13a9f3;
+              color: #eee;
+            }
+            
+            .topnav a.active {
+              background-color:#13a9f3;
+              color: #eee;;
+            }
+            
+            .topnav .search-container {
+              float: right;
+            }
+            
+            .topnav input[type=text] {
+              padding: 6px;
+              margin-top: 8px;
+              font-size: 17px;
+              border: none;
+            }
+            
+            .topnav .search-container button {
+              float: right;
+              padding: 6px 10px;
+              margin-top: 8px;
+              margin-right: 16px;
+              background: #ddd;
+              font-size: 17px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .topnav .search-container button:hover {
+              background: #ccc;
+            }
+            
+            .navbar-right {
+                float: right!important;
+                margin-right: -1px;
+            }
+            
+            
              
-        <div class="row" style="margin-top: 15px;">
+            .footer {
+               position: fixed;
+            
+               left: 0;
+               right:10;
+               bottom: 0;
+               width: 100%;
+            height: 36px;
+              background-color: #3f55af;
+                color: #d9edf7;
+               text-align: center;
+            }
+            
+            
+            </style>
+  </head>
+  <div class="topnav">
+    <div style="float:left;width:15%;overflow:hidden"> <img class="logo" src="logo-white.PNG" alt="My_Logo"></div>
+   <ul class="nav navbar-nav navbar-right">
+  
+              <li><a href="#" id="loginLink">Log in</a></li>
+          </ul>
+  
+   
+  
+  </div>
+  <body>
+ 
+          <div class="container">
+       
+            <div class="st-panel">
+                <h4>CRM Dispositions</h4>
+ 
+                <form  method="post" name="form1" id="form1">
+             
+        <div class="row">
             
                  
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                        <label class=><b>Agent ID</b></label>
-                       
-                </div>
-               
-    
-    
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                  <input class="form-control text-box single-line" id="AgentId" name="AgentId" required="required" type="text" value="" />
+                <div class="col-md-6  mb-3 form-group">
+                    <label>Agent ID</label>
+                   <input class="form-control" id="AgentId" name="AgentId" required="required" type="text" value="" />
             </div>
         
             
                 
-            <div class="col-md-2 col-sm-2 col-xs-12">
-                    <label><b>Campaign</b></label>
-            </div>
-    
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                    <input id="CampaignName" name="CampaignName" type="hidden" value="" />
+            <div class="col-md-6  col-sm-12 form-group">
+                <label>Campaign</label>
+
+                     <input id="CampaignName" name="CampaignName" type="hidden" value="" />
                 
                 <select class="form-control" data-val="true" data-val-number="The field CampaignId must be a number." data-val-required="The CampaignId field is required." id="CampaignId" name="CampaignId" ><option value="">Select Campaign</option>
             <option value="1">Navaratnalu - 1902</option>
@@ -82,38 +142,24 @@
          </div>
          
                  
-    <div class="row"  style="margin-top: 15px;" >
-    
-        <div class="col-md-2 col-sm-2 col-xs-12">						
-            <label><b>Mobile No</b></label>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-                
+    <div class="row">
+        <div class="col-md-6 mb-3 form-group">
+            <label>Mobile No</label>
+                 
                      <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" required pattern="[6-9]{1}[0-9]{9}"
                            title="Phone number with 6-9 and remaing 9 digit with 0-9">
           </div>
     
-    
-    
-            <div class="col-md-2 col-sm-2 col-xs-12">						
-                <label><b>Call No</b></label>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                     <input class="form-control text-box single-line" id="CallNumber" name="CallNumber" type="text" value="" />
+            <div class="col-md-6 mb-3 form-group">      
+                <label class='required' for="password">Call No</label>
+                         <input class="form-control text-box single-line" id="CallNumber" name="CallNumber" type="text" value="" />
              </div>
     </div>
     
-    <div class="row" style="margin-top: 15px;">
-        
-            <div class="col-md-2 col-sm-2 col-xs-12">						
-                    <label><b>Disposition</b></label>
-                </div>
-            
-            
-        <div class="col-md-4 col-sm-4 col-xs-12">
-        
-                         
-                     <select name="Disposition" id="Disposition" class="form-control">
+    <div class="row">
+        <div class="col-md-6 mb-3 form-group">
+            <label>Disposition</label>
+                      <select name="Disposition" id="Disposition" class="form-control">
                         <option value="Answered" selected>Answered</option>
                         <option value="Callback">Callback</option>
                         <option value="Calldrop">Calldrop</option>
@@ -122,116 +168,92 @@
                         <option value="No voice post answer the call">No voice post answer the call</option>
                     </select>
              </div>		
-    </div>
-     
+      
      
     
-            <div class="row"  style="margin-top: 15px;" >
-                    <div class="col-md-2 col-sm-2 col-xs-12">						
-                            <label><b>District</b></label>
-                    </div>					
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                
+             <div class="col-md-6 mb-3 form-group">
+                <label>District</label>
                         <input id="DistrictName" name="DistrictName" type="hidden" value="" />
                     <select class="form-control" data-val="true" data-val-number="The field DistrictId must be a number." data-val-required="The DistrictId field is required." id="DistrictId" name="DistrictId" onchange="Districts()"><option value="">Select District</option>
 					</select>
                 </div>
-             
-                <div class="col-md-2 col-sm-2 col-xs-12">						
-                        <label><b>Mandal</b></label>
-                </div>					
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                 
+    </div>       
+
+    <div class="row">
+        <div class="col-md-6 mb-3 form-group">
+          <label>Mandal</label>
+               
                 <input id="TehsilName" name="TehsilName" type="hidden" value="" />
                      <select class="form-control" data-val="true" data-val-number="The field TehsilId must be a number." data-val-required="The TehsilId field is required." id="TehsilId" name="TehsilId" onchange="Villages()"><option value="">Select Mandal</option>
     </select>
                 </div>
              
      
-    </div>
-    
-    <div class="row"  style="margin-top: 15px;">
-            <div class="col-md-2 col-sm-2 col-xs-12">						
-               <label><b>Village</b></label>
-            </div>
-    
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                 
-            <input id="VillageName" name="VillageName" type="hidden" value="" />
-                 <div >
-                    <select class="form-control" data-val="true" data-val-number="The field VillageId must be a number." data-val-required="The VillageId field is required." id="VillageId" name="VillageId"><option value="">Select Village</option>
+     
+<div class="col-md-6 mb-3 form-group">
+    <label>Village</label>
+             <input id="VillageName" name="VillageName" type="hidden" value="" />
+        <select class="form-control" data-val="true" data-val-number="The field VillageId must be a number." data-val-required="The VillageId field is required." id="VillageId" name="VillageId"><option value="">Select Village</option>
     </select>
-                </div>
-            </div>
+               
     </div>	
+</div>   
+      
+<div class="row">
+	
+
+
+    <div class="col-md-6 mb-3 form-group">
     
-        <div class="row"  style="margin-top: 15px;">
-                <div class="col-md-2 col-sm-2 col-xs-12">						
-                        <label><b>Department</b></label>
-                </div>				
-    
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                        
-            <input id="DepartmentName" name="DepartmentName" type="hidden" value="" />
+          <label>Department</label>
+             <input id="DepartmentName" name="DepartmentName" type="hidden" value="" />
                      <select class="form-control" data-val="true" data-val-number="The field DepartmentId must be a number." data-val-required="The DepartmentId field is required." id="DepartmentId" name="DepartmentId" onchange="Departments()" >
 					 <option value="">Select Department</option>
-     </select>
-                </div>
-        
-                <div class="col-md-2 col-sm-2 col-xs-12">						
-                        <label> <b>HOD</b> </label>
-                </div>				
-    
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                 
+                    </select>
+     </div>
+         
+     <div class="col-md-6 mb-3 form-group">
+          <label>HOD</label>
+              
             <input id="HodName" name="HodName" type="hidden" value="" />
                      <select class="form-control" data-val="true" data-val-number="The field HodId must be a number." data-val-required="The HodId field is required." id="HodId" name="HodId" onchange="Hods()" required="required" ><option value="">Select HOD</option>
     </select>
-                </div>
-            </div>
-         
-    
-            <div class="row"  style="margin-top: 15px;">
-    
-                <div class="col-md-2 col-sm-2 col-xs-12">						
-                        <label> <b>Subject</b> </label>
-                </div>				
-    
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                 <input id="SubjectName" name="SubjectName" type="hidden" value="" />
+    </div>
+    </div>
+   
+    <div class="row">
+	
+        <div class="col-md-6 mb-3 form-group">
+              <label>Subject</label>
+                  <input id="SubjectName" name="SubjectName" type="hidden" value="" />
                      <select class="form-control" data-val="true" data-val-number="The field SubjectId must be a number." data-val-required="The SubjectId field is required." id="SubjectId" name="SubjectId" onchange="Subjects()" required="required" ><option value="">Select Subject</option>
                     </select>
                 </div>
-        
-                <div class="col-md-2 col-sm-2 col-xs-12">						
-                        <label><b>SubSubject</b></label>
-                </div>				
-    
-            <div class="col-md-4 col-sm-4 col-xs-12">	
-             <input id="SubSubjectName" name="SubSubjectName" type="hidden" value="" />
+                <div class="col-md-6 mb-3 form-group">
+                    <label>SubSubject</label>
+              <input id="SubSubjectName" name="SubSubjectName" type="hidden" value="" />
                      <select class="form-control" data-val="true" data-val-number="The field SubSubjectId must be a number." data-val-required="The SubSubjectId field is required." id="SubSubjectId" name="SubSubjectId" required="required" ><option value="">Select SubSubject</option>
-    </select>
+               </select>
                 </div>
-            </div>
+    </div>
      
-    
-            <div class="form-group">
-                <label><b>Remarks</b></label>
-                <div >
-                    <input class="form-control text-box single-line" id="Remarks" name="Remarks" type="text" value="" />
+    <div class="row">
+        <div class="col-md-6 mb-3 form-group">
+          <label  for="usertype">Remarks</label>
+                     <input class="form-control text-box single-line" id="Remarks" name="Remarks" type="text" value="" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Remarks" data-valmsg-replace="true"></span>
-                </div>
-            </div>
-    
-    
-            <div class="form-group" style="text-align:right">
-                <div style="text-align:right">
-                    <input type="submit" id="submit" name="submit" value="SUBMIT" class="btn btn-primary" />
-                </div>
-            </div>
         </div>
-    </form>
     
+    <div class="col-md-6  mb-3 form-group text-right">
+               <input type="submit" id="submit" name="submit" value="SUBMIT" class="btn btn-primary" />
+    </div>
+    </div>
+
+     </form>
+    
+     </div>
+     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           
          <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
@@ -246,7 +268,7 @@
             function Districts() {
                 var Id = $('#DistrictId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallMandalMaster?districtId='+Id,
+                    url: 'http://localhost:7071/api/CallMandalMaster?districtId='+Id,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -289,7 +311,7 @@
             function Villages() {
                 var tehsilId = $('#TehsilId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallVillageMaster?mandalId='+tehsilId,
+                    url: 'http://localhost:7071/api/CallVillageMaster?mandalId='+tehsilId,
                     type: "GET",
                     dataType: "JSON",
                     data: {  },
@@ -314,7 +336,7 @@
             function Departments() {
                 var departmentId = $('#DepartmentId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallHODMaster?departmentId='+departmentId,
+                    url: 'http://localhost:7071/api/CallHODMaster?departmentId='+departmentId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -336,7 +358,7 @@
             function Hods() {
                 var hodId = $('#HodId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubjectMaster?hodId='+hodId,
+                    url: 'http://localhost:7071/api/CallSubjectMaster?hodId='+hodId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -357,7 +379,7 @@
             function Subjects() {
                 var subjectId = $('#SubjectId').val();
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallSubSubjecMaster?subjectId='+subjectId,
+                    url: 'http://localhost:7071/api/CallSubSubjecMaster?subjectId='+subjectId,
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -379,7 +401,7 @@
 	       function getDepartmentMaster() {
                 
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallDepartmentMaster',
+                    url: 'http://localhost:7071/api/CallDepartmentMaster',
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -401,7 +423,7 @@
 			function getDistrictMaster() {
                 
                 $.ajax({
-                    url: 'https://parishkaravedika.azurewebsites.net/api/CallDistrictMaster',
+                    url: 'http://localhost:7071/api/CallDistrictMaster',
                     type: "GET",
                     dataType: "JSON",
                     data: { },
@@ -446,7 +468,7 @@
             function checkForStaffMemebership(dataObj) {
             return new Promise(function (resolve, reject) {
             $.ajax({
-                url: 'https://parishkaravedika.azurewebsites.net/api/addDisposition',
+                url: 'http://localhost:7071/api/addDisposition',
                 type: "post",
                 dataType: 'json',
                 async: false,
@@ -525,17 +547,13 @@
     
         </script>
     
-    
-    <hr />
-    <footer>
-        <p>&copy; 2020 - CRM</p>
-    </footer>
-
-</div>
-
-</body>
- 
-    </html>
-    
+    <div class="footer" style="line-height:50px">
+        <footer>&copy; Copyright 2020</footer>
+        </div>
+        
+          </body>
+        </html>
+        
+        
      
      
